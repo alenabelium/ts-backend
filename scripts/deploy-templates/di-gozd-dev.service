@@ -1,0 +1,17 @@
+[Unit]
+Description=Di-Gozd BE Dev
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/backend/di-gozd-dev/dist/src/server.js
+Restart=always
+# User=backend
+# Use 'nogroup' group for Ubuntu/Debian
+# use 'nobody' group for Fedora
+# Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/backend/di-gozd-dev
+
+[Install]
+WantedBy=multi-user.target
